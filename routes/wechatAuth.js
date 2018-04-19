@@ -3,7 +3,7 @@ var router = express.Router();
 var request = require('request')
 var config = require('../config/config.json')
 
-var demoUrlPre = "http://gdmj.backend.shenzhouxing.com/"
+var demoUrlPre = "http://gdmj.backend.shenzhouxing.com"
 /* GET users listing. */
 router.get('/wxLogin', function(req, res, next) {
     /**

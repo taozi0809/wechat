@@ -31,8 +31,9 @@
                 unionid:decodeURI(UserInfo.unionid),
             }
             console.log(userInfo)
-            var demoUrlPre = "http://gdmj.backend.shenzhouxing.com/"
-            $.post(demoUrlPre+'/index/postUrlAt',urlAt,function(res){
+            var demoUrlPre = "http://gdmj.backend.shenzhouxing.com"
+
+//            $.post(demoUrlPre+'/index/postUrlAt',urlAt,function(res){
                 $.get(demoUrlPre+'/index/getWechatConfig',function(data){
                     var encodeURI1 = encodeURI(demoUrlPre+"/demo.html")
                     var imgurl = demoUrlPre+"/images/logo.png"
@@ -89,7 +90,7 @@
                         // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
                     });
                 })
-            })
+//            })
 
             function parseURL(url) {
                 var a =  document.createElement('a');

@@ -7,12 +7,13 @@ var wechatApi = require('../common/wechatapi')
 var xml2js = require('xml2js')
 
 
-router.post('/postUrlAt', function(req, res, next) {
-    signatureUrl =req.body.url;
-    console.log("signatureUrl:"+signatureUrl)
-    res.send("post success")
-    res.end("yes");
-});
+// router.post('/postUrlAt', function(req, res, next) {
+//     signatureUrl =req.body.url;
+//     console.log("signatureUrl:"+signatureUrl)
+//     res.send("post success")
+//     res.end("yes");
+// });
+var signatureUrl = "http://gdmj.backend.shenzhouxing.com"
 
 //获取,验证access_token,存入redis中
 router.use(function(req, res, next) {

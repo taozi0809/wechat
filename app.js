@@ -5,6 +5,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var config = require('./config/config.json')
+var utils = require('./common/utils')
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var wechatAuthRouter = require('./routes/wechatAuth');
@@ -25,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //微信签名认证
 // app.use(utils.sign(config))
-app.use('/', indexRouter);
+// app.use('/', indexRouter);
 app.use('/index', indexRouter);
 app.use('/users', usersRouter);
 app.use('/wechatAuth', wechatAuthRouter);

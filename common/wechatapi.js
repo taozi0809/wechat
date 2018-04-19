@@ -68,7 +68,7 @@ var randomString = function(len) {
 }
 
 // 当前网页的URL，不包含#及其后面部分
-// var signatureUrl = "http://e1z9508874.iask.in/demo.html"
+// var signatureUrl = "http://gdmj.backend.shenzhouxing.com/demo.html"
 
 wechatApi.updateSignature = function(jsapiTicket,signatureUrl){
     var timestamp = createTimestamp()
