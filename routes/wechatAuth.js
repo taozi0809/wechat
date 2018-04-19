@@ -3,13 +3,13 @@ var router = express.Router();
 var request = require('request')
 var config = require('../config/config.json')
 
-
+var demoUrlPre = "http://gdmj.backend.shenzhouxing.com/"
 /* GET users listing. */
 router.get('/wxLogin', function(req, res, next) {
     /**
      * 1.用户同意授权，获取code
      */
-        var redirectUri = encodeURI("http://e1z9508874.iask.in/wechatAuth/getAccessToken")
+        var redirectUri = encodeURI(demoUrlPre+"/wechatAuth/getAccessToken")
         var snsapiUserinfo = "snsapi_userinfo"
         var getCodeUrl = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="+config.wechat.appID+"&redirect_uri="+redirectUri+"&response_type=code&scope="+snsapiUserinfo+"&state=STATE#wechat_redirect"
         res.redirect(getCodeUrl);
@@ -43,7 +43,7 @@ router.get('/getAccessToken', function(req, res, next) {
                     var privilege = userinfo.privilege
                     var unionid = userinfo.unionid
 
-                    res.redirect("http://e1z9508874.iask.in/demo.html?openid="+openid+"&nickname="+nickname+"&sex="+sex+"&province="+province+"&city="+city+"&country="+country+"&headimgurl="+headimgurl+"&privilege="+privilege+"&unionid="+unionid+"");
+                    res.redirect(demoUrlPre+"/demo.html?openid="+openid+"&nickname="+nickname+"&sex="+sex+"&province="+province+"&city="+city+"&country="+country+"&headimgurl="+headimgurl+"&privilege="+privilege+"&unionid="+unionid+"");
                 }else{
                     console.log(response.statusCode);
                 }

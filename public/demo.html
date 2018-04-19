@@ -31,12 +31,13 @@
                 unionid:decodeURI(UserInfo.unionid),
             }
             console.log(userInfo)
-            $.post('http://e1z9508874.iask.in/index/postUrlAt',urlAt,function(res){
-                $.get('http://e1z9508874.iask.in/index/getWechatConfig',function(data){
-                    var encodeURI1 = encodeURI("http://e1z9508874.iask.in/demo.html")
-                    var imgurl = "http://e1z9508874.iask.in/images/logo.png"
+            var demoUrlPre = "http://gdmj.backend.shenzhouxing.com/"
+            $.post(demoUrlPre+'/index/postUrlAt',urlAt,function(res){
+                $.get(demoUrlPre+'/index/getWechatConfig',function(data){
+                    var encodeURI1 = encodeURI(demoUrlPre+"/demo.html")
+                    var imgurl = demoUrlPre+"/images/logo.png"
 
-                    var appId = "wx7aafc1fd8b091781"
+                    var appId = "wx9f3abe2bc1b39109"
                     var timestamp = data.timestamp
                     var nonceStr = data.noncestr
                     var signature = data.signature

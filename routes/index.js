@@ -6,6 +6,7 @@ var config = require('../config/config')
 var wechatApi = require('../common/wechatapi')
 var xml2js = require('xml2js')
 
+
 router.post('/postUrlAt', function(req, res, next) {
     signatureUrl =req.body.url;
     console.log("signatureUrl:"+signatureUrl)
